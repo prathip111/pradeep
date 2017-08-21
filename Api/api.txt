@@ -1,0 +1,15 @@
+URL=192.168.1.74:3000
+
+Index Page: 
+
+/api/v1/photos
+
+/api/v1/photos/3
+
+Image Show:/api/v1/photos/allphoto?id=1
+
+contact: /api/v1/contacts/create
+
+     (params: name,email,subject,comment)
+
+

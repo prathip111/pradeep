@@ -1,0 +1,40 @@
+<center>
+<table>
+	<thead class="thead">
+		<tr>
+			<th>Username</th>
+			<th>Comments</th>
+			<th>Status</th>
+			<th>Image</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+
+	<tbody class="tbody">
+    <%@cmd.map do|cd|%>
+        <tr>
+        	<td><%=cd.username%></td>
+			<td><%=cd.comments%></td>
+			<%if cd.status==0%>
+			<td>False</td>
+			<%end%>
+			<td><%=image_tag cd.photo.image, :class=> "image"%></td>
+			<td><%=button_to "Accept comment", users_accept_path(cd.id), :method => "get",:class=>"btn-success"%></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+</center>
+<style>
+	.thead{
+		color: blue;
+
+	}
+	.image{
+		height: 100px;
+		width: 100px;
+	}
+	.tbody{
+		color: green;
+	}
+</style>

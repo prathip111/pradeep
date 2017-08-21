@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cmd: MyString
+  client: one
+  image: one
+
+two:
+  cmd: MyString
+  client: two
+  image: two

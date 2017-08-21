@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Comment</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.name %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.subject %></td>
+        <td><%= contact.message %></td>
+        <% end %> </tr>
+  </tbody>
+</table>
+
