@@ -24,11 +24,12 @@ Rails.application.routes.draw do
 
   get 'images/show'
 
-  root to: 'users#login'  
+  root to: 'users#register'  
 
   get 'users/login'
 
   get 'users/commants'
+  post 'users/commants'
   get 'users/accept'
 
   get 'users/register'
@@ -52,6 +53,9 @@ namespace :api, defaults: {format: 'json'} do
         get 'photos/show1'
         get 'photos/allphoto'
         post 'contacts/create'
+        post 'photos/comment'
+        get 'photos/accept'
+        post 'photos/comm'
         resources :photos
         resources :users
     end

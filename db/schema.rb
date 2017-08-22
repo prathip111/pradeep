@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821130946) do
+ActiveRecord::Schema.define(version: 20170822091248) do
 
   create_table "clients", force: :cascade do |t|
     t.string "client_name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20170821130946) do
     t.string "comments"
     t.integer "status", default: 0
     t.integer "photo_id"
+    t.string "fieldname"
     t.index ["photo_id"], name: "index_comments_on_photo_id"
   end
 

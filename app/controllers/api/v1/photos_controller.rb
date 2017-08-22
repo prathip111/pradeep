@@ -18,6 +18,7 @@ before_action :set_photo, only: [:show, :edit, :update, :destroy]
           data<<{
             :photo=>ii,
             :user=>ii.user,
+            :comment=>Comment.where(photo_id: ii.id,status: 1),
             :comments=>Comment.where(photo_id: ii.id).count
     }
      end   
@@ -33,7 +34,9 @@ before_action :set_photo, only: [:show, :edit, :update, :destroy]
        @user = @photo.user
        data = {
         :photo=> @photo,
-        :user => @user
+        :user => @user,
+        :comment=>Comment.where(photo_id: params[:id],status: 1).last(5).reverse
+        #:comments=>Comment.where(photo_id: params[:id]).count
        }
      render json: data
     
@@ -56,6 +59,20 @@ before_action :set_photo, only: [:show, :edit, :update, :destroy]
   # GET /photos/1/edit
   def edit
   end
+   def accept
+
+     @cmd = Comment.find(params[:format])
+
+     if @cmd.update(status: 1)
+      render json: @cmd
+     end
+  end
+
+  def comment
+
+    @cmd = Comment.create(username: params[:username], comments: params[:comments], photo_id: params[:photo_id], fieldname: params[:fieldname])
+    render json: @cmd 
+  end
 
   # POST /photos
   # POST /photos.json
@@ -73,6 +90,12 @@ before_action :set_photo, only: [:show, :edit, :update, :destroy]
         format.json { render json: @photo.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def comm
+    
+    @comm = Comment.where(photo_id: params[:photo_id],status: 1)
+    render json: @comm
   end
 
   # PATCH/PUT /photos/1

@@ -29,12 +29,16 @@ class UsersController < ApplicationController
 		end
   end
   def commants
-    @cmd = Comment.where(status: 0)
+
+    @cmd = Comment.where(photo_id: params[:format],status: 0)
+
   end
   def accept
+
      @cmd = Comment.find(params[:format])
+
      if @cmd.update(status: 1)
-      redirect_to users_commants_path
+      redirect_to users_commants_path(@cmd.photo_id)
      end
   end
 end
