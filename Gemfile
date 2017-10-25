@@ -12,6 +12,8 @@ gem 'rails', '~> 5.1.3'
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+# for using text editor
+gem 'ckeditor'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,6 +31,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'font-awesome-sass', '~> 4.7.0'
+gem 'will_paginate'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

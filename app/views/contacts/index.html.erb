@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
-
+<%= will_paginate @contacts %>
+<div class="contact">
 <h1>Contacts</h1>
 
-<table>
+<table class="table table-hover"style="width:40% ">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,7 +21,17 @@
         <td><%= contact.email %></td>
         <td><%= contact.subject %></td>
         <td><%= contact.message %></td>
-        <% end %> </tr>
+        <td><%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>
+'.html_safe, contacts_delete_contact_path(:format=>contact.id), method: :delete%></td>
+                <% end %> </tr>
   </tbody>
 </table>
-
+<center><%= link_to 'Back', photos_path, :id=>"back",class: "btn btn-success cont-button" %></center>
+</div>
+<!-- <style>
+#back
+{
+  color : red;
+}
+</style>
+ -->

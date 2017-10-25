@@ -6,12 +6,73 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/app/assets/stylesheets/css/custom.css">
+<!-- <link href="altiustech2/app/assets/stylesheets/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="altiustech2/app/assets/stylesheets/css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /> -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
-
   <body>
-
+  <% if session[:user_id].present?%>
+<nav class="navbar sticky-top navbar-toggleable-md navbar-light bg-faded"  id="header_nav">
   <div class="container">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- <a class="navbar-brand" href="index.html"><img src="/assets/altius_logo.png"></a> -->
+  <%= link_to '<img src="/assets/altius_logo.png">'.html_safe, photos_path, class: "navbar-brand" %>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <!-- <a class="nav-link" href="#">New Photo<span class="sr-only">(current)</span></a> -->
+        <%= link_to 'New Photo', new_photo_path, class: "nav-link"%>
+      </li>
+        <li class="nav-item">
+        <!-- <a class="nav-link" href="#">Contact</a> -->
+        <%= link_to 'Contacts', contacts_index_path, :id=>"clr", class: "nav-link"%>
+      </li>
+      <li class="nav-item">
+        <!-- <a class="nav-link" href="#"></a> --><% if session[:user_id].present?%>
+        <%= link_to 'logout', users_logout_path, :id=>"namef", class: "nav-link"%>
+        <%end%>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+<%end%>
+  <div class="container ">
+  <!-- <div class="logout"><%#if session[:user_id].present?%>
+<%#= link_to 'logout', users_logout_path, :id=>"namef"%>
+<%#end%>
+  </div> -->
     <%= yield %>
   </div>
+  <% if session[:user_id].present?%>
+  <footer>
+        <div class="copy">
+    <ul>
+      <li>&copy; ALTIUS SOLUTIONS Technology 2018<span class="bull">&bull;</span></li>
+      <li><a href="#">PRIVACY POLICY</a><span class="bull">&bull;</span></li>
+      <li><a href="#">TERMS & CONDITIONS</a></li>
+    </ul>
+  </div> 
+    </footer>
+    <%end%>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
   </body>
+
+
 </html>
+<style>
+      .logout{
+        float: right;
+        color: red;
+      }
+      #namef{
+        color: red;
+      }
+    </style>

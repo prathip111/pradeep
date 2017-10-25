@@ -1,5 +1,6 @@
-<center>
-<table>
+<%=will_paginate @cmd %>
+<center class="commants">
+<table class="table table-hover" >
 	<thead class="thead">
 		<tr>
 			<th>Username</th>
@@ -15,27 +16,27 @@
         <tr>
         	<td><%=cd.username%></td>
 			<td><%=cd.comments%></td>
-			<%if cd.status==0%>
-			<td><%= cd.fieldname%></td>
-			<%end%>
-			
+			<td><%= cd.fieldname%></td>	
 			<td><%=image_tag cd.photo.image, :class=>"image"%></td>
-			<td><%=button_to "Accept comment", users_accept_path(cd), :method => "get",:class=>"btn-success"%></td>
+			<div class="action">
+			<td><%if cd.status==0 %>
+					<%=button_to "Accept comment", users_accept_path(cd), :method => "get",:class=>"btn btn-primary"%>
+				   <%else%>
+				   <%=button_to "Delete Comment", users_deletecmd_path(cd), :method => "get",:class=>"btn btn-danger"%>
+				   <%end%>
+					</td>
+              </div>
         </tr>
     <% end %>
   </tbody>
 </table>
+<center><%= link_to 'Back', photos_path, class: "btn btn-success" %></center>
 </center>
-<style>
-	.thead{
-		color: blue;
 
-	}
+
+<style>
 	.image{
 		height: 100px;
 		width: 100px;
-	}
-	.tbody{
-		color: green;
 	}
 </style>

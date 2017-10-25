@@ -8,7 +8,6 @@ before_action :set_photo, only: [:show, :edit, :update, :destroy]
   def index
    if params[:count].present?
       @photos = Photo.last(params[:count]).reverse
-          
     else
     @photos = Photo.all.order(created_at: :desc)
   end

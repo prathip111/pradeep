@@ -8,7 +8,7 @@ class Photo < ApplicationRecord
 
   private
    def image_size_validation
-     errors[:image] << "should be less than 5MB " if image.size > 5.0.megabytes
+     errors[:image] << "should be less than 10MB " if image.size > 10.0.megabytes
    end
    def self.photolog(params)
    	  photo = Photo.find_by_id(params[:id])

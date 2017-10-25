@@ -1,0 +1,222 @@
+body{
+	background-color: #f2f2f2!important;
+}
+.login-page{
+	padding: 20px !important;
+	background: #fff!important;
+	width: 700px !important;
+	margin:75px auto !important;
+}
+tbody .img{
+	height:100px!important;
+    width:100px!important;
+}
+.add-photo {
+    border: 1px solid #f2f2f2;
+    height: 20px;
+    width: 20px;
+}
+a:hover{
+	background: none!important;
+	text-decoration:none !important;
+}
+.form-control-feedback {
+    margin-bottom: 1.25rem;
+}
+@media only screen and (min-width: 768px){
+.navbar-collapse {
+	margin:0 75px!important;
+}
+.navbar .collapse li{
+	padding-right: 20px;
+}
+}
+/*.new_photo{
+	width: 700px !important;
+	background:#fff !important;
+	padding: 30px;
+	margin:50px auto !important;
+}*/
+.field{
+	margin-bottom: 40px !important;
+}
+.commants{
+	margin-top: 50px !important;
+    background: #fff;
+    width: 100%;
+    padding: 20px;
+}
+.edit{
+	width: 700px !important;
+	background:#fff !important;
+	padding: 30px;
+	margin:50px auto !important;
+}
+.edit h1{
+	padding-bottom: 40px !important;
+}
+.contact{
+	margin-top: 50px !important;
+    background: #fff !important;
+    width: 100%;
+    padding:20px !important;
+
+}
+.blog_single {
+    /* width: 80%; */
+    margin: 20px auto 0 auto;
+    text-align: center !important;
+    border-top: 1px solid #f2f2f2 ;
+    padding-top: 30px;
+}
+.blog_single ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+.blog_single li {
+    display: inline-block;
+    margin: 0px 10px;
+}
+#how_works h1, #how_works p{
+	text-align: center !important;
+	font-weight: 700;
+}
+section h1 {
+    font-size: 48px !importants;
+    font-weight: 600;
+    color: #3c3c3c;
+}
+.blog_single img{
+	width: 100%!important;
+}
+.blog_single li i {
+    margin-right: 10px;
+    font-size: 20px!important;
+}
+.blog_single h2 {
+    margin-bottom: 8px;
+    font-weight:700px !important;
+}
+.show{
+	background: #fff !important;
+	margin-bottom: 100px !important;
+    margin: 50px auto;
+}
+.blog_single p{
+	margin: 20px 0 !important;
+	text-align: justify !important;
+}
+/*.copy{
+    height: 55px;
+    line-height: 55px;
+    background: #0d0d0d;
+    text-align: center;
+    margin-top: 30px;
+    text-transform: uppercase;
+}*/
+.copy ul{
+    list-style-type: disc!important;
+    color:  #848484 !important;
+   padding: 20.5px !important;
+    margin: 0px !important;
+    line-height: 100%;
+}
+.copy ul li{
+    display: inline-block;
+    list-style-type: disc!important;
+    font-size: 12px;
+}
+span.bull{
+    display: inline-block;
+    margin-top: 10px;
+    margin: 0px 20px;
+    font-size: 10px!important;
+}
+.copy ul li a{
+	color: #848484!important;
+}
+.copy ul li a:hover{
+	color: #fff !important;
+	text-decoration: none;
+}
+footer{
+   background-color:  #0d0d0d;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+    text-align: center;
+    color: #CCC;
+}
+.table {
+    width: 100% !important;
+}
+.nav-link:hover, .active > .nav-link {
+    color: #e44c41 !important;
+}
+.navbar .navbar-nav .nav-link{
+	font-size: 19px;
+    color: #090909;
+}
+.navbar-collapse {
+    margin: 0 75px !important;
+}
+.navbar-collapse {
+    margin: 0px !important;
+}
+.photos{
+	background: #fff !important;
+}
+.btn {
+    /*text-transform: uppercase !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 15px !important;
+    height: 2.25em !important;
+    line-height: 2.25em !important ;
+    padding: 0 15px !important;*/
+    border-radius: 2.5em !important;
+    /*border: 0px !important;
+    cursor: pointer !important;*/
+}
+.btn-success {
+    background: transparent !important;
+    border: 2px solid #e44c41 !important;
+    color: #e44c41 !important;
+}
+.btn-success:hover {
+    background: #e44c41 !important;
+    border: 2px solid #e44c41 !important;
+    color: #fff !important;
+}
+btn:focus {
+    outline: 0;
+    -webkit-box-shadow:transparent !important ;
+    box-shadow:transparent !important ;
+}
+.navbar{
+	background: #fff !important;
+}
+.first{
+    padding: 50px;
+}
+.show-button{
+    text-align: center!important;
+    margin-top: 25px;
+}
+/*.edit-buttton{
+    text-align: center!important;
+    margin-top: 25px;
+}*/
+#notice{
+    margin-top: 40px;
+    
+}
+.btn-primary{
+ color: #fff !important;
+background-color: #5cb85c !important;
+border-color: #5cb85c !important;
+}
+.show-back-btn{
+    float:right;
+}

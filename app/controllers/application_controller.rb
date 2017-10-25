@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   #protect_from_forgery with: :exception
+   #before_action :authenticate_user, :only => [:index, :new, :create, :update, :destroy]
    before_action :authenticate_user, :only => [:post]
- # before_action :save_login_state, :only => [:login, :register,:index]
+  #before_action :save_login_state, :only => [:login, :register,:index]
 
  
 protected 
@@ -17,4 +18,14 @@ def authenticate_user
 	end
 end
 
+ def save_login_state
+  if session[:user_id]
+     redirect_to(:controller => 'photos', :action => 'index')
+     return false
+   else
+     return true
+   end
+ end
+
 end
+ 

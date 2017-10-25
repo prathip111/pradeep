@@ -1,15 +1,21 @@
- class PhotosController < ApplicationController
+  class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user, :only => [:index, :new, :update]
+ #before_action :save_login_state, :only => [:login, :login_attempt]
 
   # GET /photos
   # GET /photos.json
   def index
-  @photos = Photo.all.order(created_at: :desc)
+  @photos = Photo.paginate(:page => params[:page], :per_page => 5).order(created_at: :desc)
   end
 
   # GET /photos/1
   # GET /photos/1.json
   def show
+
+  end
+
+  def show_comments
 
   end
 
@@ -20,6 +26,7 @@
 
   # GET /photos/1/edit
   def edit
+    
   end
 
   # POST /photos
@@ -27,8 +34,6 @@
   def create
     @photo = Photo.new(photo_params)
     @photo.user_id = session[:user_id]
-
-
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
